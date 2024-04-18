@@ -6,7 +6,7 @@ public class ShipMovement : MonoBehaviour
 {
 
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected float speed = 0.01f;
+    [SerializeField] protected float speed = 0.03f;
 
     void FixedUpdate()
     {

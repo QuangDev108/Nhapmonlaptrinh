@@ -29,4 +29,9 @@ public class QuangMonoBehaviour : MonoBehaviour
     {
         //For override
     }
+
+    protected virtual void OnEnable()
+    {
+        //For override
+    }
 }
