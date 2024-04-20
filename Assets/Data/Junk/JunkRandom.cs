@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JunkRandom : QuangMonoBehaviour
 {
-    [SerializeField] protected JunkCtril junkCtril;
+    [SerializeField] protected JunkSpawnerCtril junkCtril;
 
     protected override void LoadComponents()
     {
@@ -15,7 +15,7 @@ public class JunkRandom : QuangMonoBehaviour
     protected virtual void LoadJunkCtril()
     {
         if (this.junkCtril != null) return;
-        this.junkCtril = GetComponent<JunkCtril>();
+        this.junkCtril = GetComponent<JunkSpawnerCtril>();
         Debug.Log(transform.name + ": LoadJunkRandom", gameObject);
     }    
 
