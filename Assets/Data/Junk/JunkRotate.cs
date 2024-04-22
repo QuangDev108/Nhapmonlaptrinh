@@ -15,5 +15,5 @@ public class JunkRotate : JunkAbstract
     {
         Vector3 eulers = new Vector3(0,0, 1);
         this.junkCtril.Model.Rotate(eulers * this.speed * Time.fixedDeltaTime);
-    }    
+    }
 }

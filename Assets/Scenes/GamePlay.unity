@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 147692430}
   - component: {fileID: 147692429}
   m_Layer: 0
-  m_Name: DamageReceiver
+  m_Name: JunkDamageReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,11 +197,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 147692427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9675dfed4d9820546bc140dd7cdbf403, type: 3}
+  m_Script: {fileID: 11500000, guid: 67e94758e6cb2564ebf2a3348d0387e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphereCollider: {fileID: 147692430}
   hp: 1
-  hpMax: 10
+  hpMax: 2
+  isDead: 0
+  junkCtrl: {fileID: 1790709723}
 --- !u!135 &147692430
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -210,7 +213,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147692427}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
@@ -383,7 +386,7 @@ GameObject:
   - component: {fileID: 432962588}
   - component: {fileID: 432962589}
   m_Layer: 0
-  m_Name: DamageSender
+  m_Name: BulletDamageSender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,10 +415,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 432962587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7bf54be21828cd439a43778667b2462, type: 3}
+  m_Script: {fileID: 11500000, guid: 271a4318339811d438f11ceb6149a089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  bulletCtril: {fileID: 1393845891}
 --- !u!1 &556515091
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12be8286b45f6f4ebdc7a7dd4e475b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSender: {fileID: 432962589}
+  damageSender: {fileID: 0}
+  bulletDespawn: {fileID: 0}
 --- !u!1 &1530851373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 2071362367}
+  junkDespawn: {fileID: 0}
 --- !u!1 &1799260204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   junkSpawner: {fileID: 2099013428}
+  spawnedCount: 0
   spawnPoints: {fileID: 204543708}
 --- !u!114 &2099013431
 MonoBehaviour:
@@ -1458,7 +1465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bf3f1210b066940a45022dac65845f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtril: {fileID: 2099013430}
+  junkSpawnerCtrl: {fileID: 0}
+  randomDelay: 1
+  randomTimer: 0
+  randomLimit: 9
 --- !u!1 &2142889942
 GameObject:
   m_ObjectHideFlags: 0
