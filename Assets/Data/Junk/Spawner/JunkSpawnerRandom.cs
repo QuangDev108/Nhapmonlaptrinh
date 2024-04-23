@@ -23,10 +23,7 @@ public class JunkSpawnerRandom : QuangMonoBehaviour
         Debug.Log(transform.name + ": junkCtrl", gameObject);
     }    
 
-    protected override void Start()
-    {
-       // this.JunkSpawning();
-    }
+    
     protected virtual void FixedUpdate()
     {
         this.JunkSpawning();
@@ -34,14 +31,25 @@ public class JunkSpawnerRandom : QuangMonoBehaviour
 
     protected virtual void JunkSpawning()
     {
+        if (this.RandomReachLimit()) return;
+
+        this.randomTimer += Time.fixedDeltaTime;
+        if (this.randomTimer < this.randomDelay) return;
+        this.randomTimer = 0;
+
         Transform ranPoint = this.junkSpawnerCtrl.SpawnPoints.GetRandom();
         Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
-        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos, rot);
+
+        Transform prefab = this.junkSpawnerCtrl.JunkSpawner.RandomPrefab();
+        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(prefab, pos, rot);
         obj.gameObject.SetActive(true);
 
-        Invoke(nameof(this.JunkSpawning), 1f);
     }    
 
-   
+   protected virtual bool RandomReachLimit()
+    {
+        int currentJunk = this.junkSpawnerCtrl.JunkSpawner.SpawnedCount;
+        return currentJunk >= this.randomLimit;
+    }    
 }
