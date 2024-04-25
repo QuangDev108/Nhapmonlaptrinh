@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class DamageReceiver : QuangMonoBehaviour
+public abstract class DamageReceiver : QuangMonoBehaviour
 {
     [Header("Damage Receiver")]
     [SerializeField] protected SphereCollider sphereCollider;
@@ -72,10 +72,8 @@ public class DamageReceiver : QuangMonoBehaviour
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-        //For override
-    }
+    protected abstract void OnDead();
+    
 
 }
 
