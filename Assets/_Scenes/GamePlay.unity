@@ -323,10 +323,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 113979492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e8140c9f4382d4aa604434a2f3e1d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 81b3babeb78e63045b5529c2b2b0f72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 25
+  disLimit: 70
   distance: 0
   mainCam: {fileID: 1982094977}
 --- !u!1 &147692427
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e213c6ed5b63740852930085408019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtril: {fileID: 0}
+  itemCtril: {fileID: 1866083144}
   _collider: {fileID: 598415689}
 --- !u!135 &598415689
 SphereCollider:
@@ -970,7 +970,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &698955298
 GameObject:
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e213c6ed5b63740852930085408019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtril: {fileID: 0}
+  itemCtril: {fileID: 2135115582}
   _collider: {fileID: 970977558}
 --- !u!135 &970977558
 SphereCollider:
@@ -1428,7 +1428,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &994754074
 GameObject:
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027051287}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fbd16cf5aa2a7418e22859f5e0adc2, type: 3}
   m_Name: 
@@ -1847,10 +1847,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219963811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e8140c9f4382d4aa604434a2f3e1d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 81b3babeb78e63045b5529c2b2b0f72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 25
+  disLimit: 70
   distance: 0
   mainCam: {fileID: 1982094977}
 --- !u!1 &1229037557
@@ -2446,12 +2446,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866083142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b069a59d3c18a9409fd1713250dd178, type: 3}
+  m_Script: {fileID: 11500000, guid: fa4fbb48ba8eccd4184ddffefa83654c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 832130803}
-  junkDespawn: {fileID: 113979494}
-  junkSO: {fileID: 11400000, guid: babe113193b511343a8a1d69c9b220c8, type: 2}
+  itemDespawn: {fileID: 113979494}
 --- !u!1 &1925132964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,12 +2917,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2135115580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b069a59d3c18a9409fd1713250dd178, type: 3}
+  m_Script: {fileID: 11500000, guid: fa4fbb48ba8eccd4184ddffefa83654c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 766907136}
-  junkDespawn: {fileID: 1219963813}
-  junkSO: {fileID: 11400000, guid: 71c8da6439ebea64ab4b65376ec484fd, type: 2}
+  itemDespawn: {fileID: 1219963813}
 --- !u!1 &2142889942
 GameObject:
   m_ObjectHideFlags: 0

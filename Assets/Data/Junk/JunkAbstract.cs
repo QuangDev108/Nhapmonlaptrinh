@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class JunkAbstract : QuangMonoBehaviour
 {
+    [Header("Junk Abstract")]
     [SerializeField] protected JunkCtril junkCtril;
     public JunkCtril JunkCtril { get => junkCtril; }
 

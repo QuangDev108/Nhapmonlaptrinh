@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class ItemPickupable :JunkAbstract
+public class ItemPickupable : ItemAbstract
 {
     [Header("Item Pickupable")]
     [SerializeField] protected SphereCollider _collider;
@@ -48,6 +48,6 @@ public class ItemPickupable :JunkAbstract
 
     public virtual void Picked()
     {
-        this.junkCtril.JunkDespawn.DespawnObject();
+        this.itemCtril.ItemDespawn.DespawnObject();
     }    
 }
