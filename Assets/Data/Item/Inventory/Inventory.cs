@@ -10,7 +10,7 @@ public class Inventory : QuangMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 4);
+        //this.AddItem(ItemCode.IronOre, 4);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -23,6 +23,25 @@ public class Inventory : QuangMonoBehaviour
         itemInventory.itemCount = newCount;
         return true;
     }
+
+    public virtual bool DeductItem(ItemCode itemCode, int addCount)
+    {
+        ItemInventory itemInventory = this.GetItemByCode(itemCode);
+        int newCount = itemInventory.itemCount - addCount;
+        if (newCount < 0) return false;
+
+        itemInventory.itemCount = newCount;
+        return true;
+    }
+
+    public virtual bool TryDeductItem(ItemCode itemCode, int addCount)
+    {
+        ItemInventory itemInventory = this.GetItemByCode(itemCode);
+        int newCount = itemInventory.itemCount - addCount;
+        if (newCount < 0) return false;
+        return true;
+    }
+
 
     public virtual ItemInventory GetItemByCode(ItemCode itemCode)
     {
