@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,9 @@ public class ItemUpgrade : InventoryAbstract
     protected override void Start()
     {
         base.Start();
-
+        Invoke(nameof(this.Test), 1);
+        Invoke(nameof(this.Test), 2);
+        Invoke(nameof(this.Test), 3);
     }
 
     protected virtual void Test()
@@ -27,13 +28,12 @@ public class ItemUpgrade : InventoryAbstract
 
         List<ItemRecipe> upgradeLevels = iteminventory.itemProfile.upgradeLevels;
         if(!this.ItemUpgradeable(upgradeLevels)) return false;
-        if(!HaveEnoughIngredients(upgradeLevels, iteminventory.upgradeLevel)) return false;
+        if(!this.HaveEnoughIngredients(upgradeLevels, iteminventory.upgradeLevel)) return false;
 
         this.DeductIngredients(upgradeLevels, iteminventory.upgradeLevel);
         iteminventory.upgradeLevel++;
 
         return true;
-
     }    
     
     protected virtual bool ItemUpgradeable(List<ItemRecipe> upgradeLevels)

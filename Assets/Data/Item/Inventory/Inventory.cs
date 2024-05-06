@@ -11,8 +11,9 @@ public class Inventory : QuangMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 21);
-        this.AddItem(ItemCode.CopperSword, 3);
+        this.AddItem(ItemCode.CopperSword, 1);
+        this.AddItem(ItemCode.GoldOre, 10);
+        this.AddItem(ItemCode.IronOre, 10);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -64,8 +65,10 @@ public class Inventory : QuangMonoBehaviour
     protected virtual int GetMaxStack(ItemInventory itemInventory)
     {
         if(itemInventory == null) return 0;
+
         return itemInventory.maxStack;
     }
+
     protected virtual ItemProfileSO GetItemProfile(ItemCode itemCode)
     {
         var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
@@ -85,6 +88,7 @@ public class Inventory : QuangMonoBehaviour
             if (this.IsFullStack(itemInventory)) continue;
             return itemInventory;
         }
+
         return null;
     }
 
@@ -95,6 +99,7 @@ public class Inventory : QuangMonoBehaviour
         int maxStack = this.GetMaxStack(itemInventory);
         return itemInventory.itemCount >= maxStack;
     }
+
     protected virtual ItemInventory CreateEmptyItem(ItemProfileSO itemProfile)
     {
         ItemInventory itemInventory = new ItemInventory
@@ -102,6 +107,7 @@ public class Inventory : QuangMonoBehaviour
             itemProfile = itemProfile,
             maxStack = itemProfile.defaultMaxStack
         };
+
         return itemInventory;
     }
 
@@ -109,7 +115,6 @@ public class Inventory : QuangMonoBehaviour
     {
         int totalCount = this.ItemTotalCount(itemCode);
         return totalCount >= numberCheck;
-
     }    
 
     public virtual int ItemTotalCount(ItemCode itemCode)
@@ -120,6 +125,7 @@ public class Inventory : QuangMonoBehaviour
             if(itemInventory.itemProfile.itemCode != itemCode) continue;
             totalCount += itemInventory.itemCount;
         }    
+
         return totalCount;
     }
 
@@ -146,6 +152,20 @@ public class Inventory : QuangMonoBehaviour
             }
 
             itemInventory.itemCount -= deduct;
+        }  
+        
+        this.ClearEmptySlot();
+    }   
+    
+    protected virtual void ClearEmptySlot()
+    {
+        ItemInventory itemInventory;
+        for(int i = 0; i < this.items.Count; i++)
+        {
+            itemInventory = this.items[i];
+            if(itemInventory.itemCount == 0) this.items.RemoveAt(i);
         }    
-    }    
+    }
 }
+
+
