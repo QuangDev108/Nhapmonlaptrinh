@@ -575,8 +575,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316506565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 1.0865686, y: 1.1155134, z: 1}
+  m_LocalPosition: {x: -0.0563, y: -0.0423, z: 2}
+  m_LocalScale: {x: 1.2979492, y: 1.1038005, z: 1}
   m_Children: []
   m_Father: {fileID: 189373616}
   m_RootOrder: 0
@@ -1663,6 +1663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 2071250407}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: 7cc572a80e34da14faf4b0f902ec7b11, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &1064933641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1776,7 @@ GameObject:
   - component: {fileID: 1072745654}
   - component: {fileID: 1072745655}
   m_Layer: 0
-  m_Name: ItemDrop
+  m_Name: InventoryDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1803,7 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd4f610aaf8f946a982b3e0d94a01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1486235263}
 --- !u!1 &1115208194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,6 +2691,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 113979494}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: fed47721a9c62834bb446131dad0e535, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &1925132964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,6 +3258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 1219963813}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: e918e7ed32f29d94e8a865edab3e5cfc, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &2142889942
 GameObject:
   m_ObjectHideFlags: 0

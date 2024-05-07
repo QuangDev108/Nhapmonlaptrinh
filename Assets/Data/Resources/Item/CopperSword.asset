@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CopperSword
   m_EditorClassIdentifier: 
   itemCode: 1000
-  itemTyp: 2
+  itemType: 2
   itemName: CopperSword
   defaultMaxStack: 1
   upgradeLevels:
