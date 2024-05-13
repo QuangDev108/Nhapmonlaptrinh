@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnPoints : QuangMonoBehaviour
+public  class SpawnPoints : QuangMonoBehaviour
 {
     [SerializeField] protected List<Transform> points;
 

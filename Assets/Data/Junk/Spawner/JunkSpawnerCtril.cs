@@ -10,8 +10,8 @@ public class JunkSpawnerCtril : QuangMonoBehaviour
     [SerializeField] protected int spawnedCount = 0;
     public int SpawnedCount => spawnedCount;
 
-    [SerializeField] protected JunkSpawnPoints spawnPoints;
-    public JunkSpawnPoints SpawnPoints { get => spawnPoints; }
+    [SerializeField] protected SpawnPoints spawnPoints;
+    public SpawnPoints SpawnPoints  => spawnPoints;
 
     protected override void LoadComponents()
     {
@@ -30,7 +30,7 @@ public class JunkSpawnerCtril : QuangMonoBehaviour
     protected virtual void LoadSpawnPoints()
     {
         if(this.spawnPoints != null) return;
-        this.spawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
+        this.spawnPoints = Transform.FindObjectOfType<SpawnPoints>();
         Debug.Log(transform.name + ": LoadSpawnPoints", gameObject);
     }    
 }

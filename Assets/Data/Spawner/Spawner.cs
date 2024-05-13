@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Spawner : QuangMonoBehaviour
 {
@@ -16,14 +17,14 @@ public abstract class Spawner : QuangMonoBehaviour
     protected override void LoadComponents()
     {
         this.LoadPrefabs();
-        this.LoadHodler();
+        this.LoadHolder();
     }
 
-    protected virtual void LoadHodler()
+    protected virtual void LoadHolder()
     {
         if (this.holder != null) return;
         this.holder = transform.Find("Holder");
-        Debug.Log(transform.name + ": LoadHolder", gameObject);
+        Debug.Log(transform.name + ": LoadHodler", gameObject);
     }
 
     protected virtual void LoadPrefabs()
@@ -35,7 +36,6 @@ public abstract class Spawner : QuangMonoBehaviour
         {
             this.prefabs.Add(prefab);
         }
-
         this.HidePrefabs();
 
         Debug.Log(transform.name + ": LoadPrefabs", gameObject);
@@ -69,14 +69,13 @@ public abstract class Spawner : QuangMonoBehaviour
         newPrefab.parent = this.holder;
         this.spawnedCount++;
         return newPrefab;
-    }    
-
+    }
 
     protected virtual Transform GetObjectFromPool(Transform prefab)
     {
         foreach (Transform poolObj in this.poolObjs)
         {
-            if (this.poolObjs == null) continue;
+            if (poolObj == null) continue;
 
             if (poolObj.name == prefab.name)
             {
@@ -113,5 +112,3 @@ public abstract class Spawner : QuangMonoBehaviour
         return this.prefabs[rand];
     }
 }
-
-
