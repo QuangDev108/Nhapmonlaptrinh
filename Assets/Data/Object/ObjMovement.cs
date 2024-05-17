@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMovement : MonoBehaviour
+public class ObjMovement : MonoBehaviour
 {
 
     [SerializeField] protected Vector3 targetPosition;
