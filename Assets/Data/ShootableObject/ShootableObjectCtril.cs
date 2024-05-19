@@ -16,6 +16,11 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
     [SerializeField] protected ObjShooting objShooting;
     public ObjShooting ObjShooting => objShooting;
 
+    [SerializeField] protected ObjMovement objMovement;
+    public ObjMovement ObjMovement => objMovement;
+
+    [SerializeField] protected ObjLookAtTarget objLookAtTarget;
+    public ObjLookAtTarget ObjLookAtTarget => objLookAtTarget;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,6 +28,8 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
         this.LoadDespawn();
         this.LoadSO();
         this.LoadObjShooting();
+        this.LoadObjMovement();
+        this.LoadObjLookAtTarget();
     }
     protected virtual void LoadModel()
     {
@@ -37,6 +44,21 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
         this.objShooting = GetComponentInChildren<ObjShooting>();
         Debug.Log(transform.name + ": LoadObjShooting", gameObject);
     }    
+
+    protected virtual void LoadObjMovement()
+    {
+        if (this.objMovement != null) return;
+        this.objMovement = GetComponentInChildren<ObjMovement>();
+        Debug.LogWarning(transform.name + ": LoadObjMovement", gameObject);
+    }
+
+    protected virtual void LoadObjLookAtTarget()
+    {
+        if (this.objLookAtTarget != null) return;
+        this.objLookAtTarget = GetComponentInChildren<ObjLookAtTarget>();
+        Debug.LogWarning(transform.name + ": LoadObjLookAtTarget", gameObject);
+    }
+
     protected virtual void LoadDespawn()
     {
         if (this.despawn != null) return;

@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjMovement : MonoBehaviour
+public class ObjMovement : QuangMonoBehaviour
 {
-
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected float speed = 0.03f;
+    [SerializeField] protected float speed = 0.01f;
     [SerializeField] protected float distance = 1f;
     [SerializeField] protected float minDistance = 1f;
 
     protected virtual void FixedUpdate()
     {
-        this.LootAtTarget();
         this.Moving();
     }
-
-    protected virtual void LootAtTarget()
+   
+    public virtual void SetSpeed(float speed)
     {
-        Vector3 diff = this.targetPosition - transform.parent.position;
-        diff.Normalize();
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z);
-    }
+        this.speed = speed;
+    }    
 
     protected virtual void Moving()
     {
