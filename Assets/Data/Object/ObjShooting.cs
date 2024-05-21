@@ -28,7 +28,6 @@ public abstract class ObjShooting : QuangMonoBehaviour
 
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
-        //Transform newBullet = Instantiate(this.bulletPrefab, spawnPos, rotation);
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, spawnPos, rotation);
         if (newBullet == null) return;
 

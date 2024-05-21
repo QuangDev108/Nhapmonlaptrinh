@@ -32,11 +32,15 @@ public  class ObjAppearingWithoutShoot : ShootableObjectAbstract,IObjAppearObser
     public void OnAppearStart()
     {
         this.shootableObjectCtril.ObjShooting.gameObject.SetActive(false);
+        this.shootableObjectCtril.ObjLookAtTarget.gameObject.SetActive(false);
     }
 
     public void OnAppearFinish()
     {
         this.shootableObjectCtril.ObjShooting.gameObject.SetActive(true);
+        this.shootableObjectCtril.ObjLookAtTarget.gameObject.SetActive(true);
+
+        this.shootableObjectCtril.Spawner.Hold(transform.parent);
     }
 }
 
