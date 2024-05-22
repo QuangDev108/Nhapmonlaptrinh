@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class ShootableObjectCtril : QuangMonoBehaviour
 {
+    [Header("Object Ctril")]
     [SerializeField] protected Transform model;
     public Transform Model => model;
 
@@ -53,8 +54,8 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
     {
         if (this.objShooting != null) return;
         this.objShooting = GetComponentInChildren<ObjShooting>();
-        Debug.Log(transform.name + ": LoadObjShooting", gameObject);
-    }    
+        Debug.LogWarning(transform.name + ": LoadObjShooting", gameObject);
+    }
 
     protected virtual void LoadObjMovement()
     {

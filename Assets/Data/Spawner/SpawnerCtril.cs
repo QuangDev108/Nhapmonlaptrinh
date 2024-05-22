@@ -29,7 +29,7 @@ public class SpawnerCtril : QuangMonoBehaviour
     protected virtual void LoadSpawnPoints()
     {
         if (this.spawnPoints != null) return;
-        this.spawnPoints = Transform.FindObjectOfType<SpawnPoints>();
+        this.spawnPoints = GameObject.Find("ScenceSpawnPoints").GetComponent<SpawnPoints>();
         Debug.Log(transform.name + ": LoadSpawnPoints", gameObject);
     }
 }

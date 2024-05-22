@@ -24,7 +24,7 @@ public abstract class Spawner : QuangMonoBehaviour
     {
         if (this.holder != null) return;
         this.holder = transform.Find("Holder");
-        Debug.Log(transform.name + ": LoadHodler", gameObject);
+        Debug.LogWarning(transform.name + ": LoadHodler", gameObject);
     }
 
     protected virtual void LoadPrefabs()
@@ -38,7 +38,7 @@ public abstract class Spawner : QuangMonoBehaviour
         }
         this.HidePrefabs();
 
-        Debug.Log(transform.name + ": LoadPrefabs", gameObject);
+        Debug.LogWarning(transform.name + ": LoadPrefabs", gameObject);
     }
 
     protected virtual void HidePrefabs()
