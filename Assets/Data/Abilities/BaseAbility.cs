@@ -17,6 +17,10 @@ public abstract class BaseAbility : QuangMonoBehaviour
     {
         this.Timing();
     }
+    protected virtual void Update()
+    {
+       
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();

@@ -17,9 +17,17 @@ public  class ObjAppearingBigger : ObjAppearing
     }
     protected override void Appearing()
     {
+        if (this.appeared) return;
+
         this.currentScale += this.speedScale;
         transform.parent.localScale = new Vector3 (this.currentScale, this.currentScale, this.currentScale);
         if (this.currentScale > this.maxScale) this.Appear();
+        if(this.currentScale >= this.maxScale)
+        {
+            transform.parent.localScale = new Vector3(this.maxScale, this.maxScale, this.maxScale);
+            this.Appear();
+        } 
+            
     }    
      
    protected virtual void InitScale()

@@ -19,6 +19,13 @@ public abstract class ObjAppearing : QuangMonoBehaviour
         base.Start();
         this.OnAppearStart();
     }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        this.appeared = false;
+        this.OnAppearStart ();
+    }
     protected virtual void FixedUpdate()
     {
         this.Appearing();
