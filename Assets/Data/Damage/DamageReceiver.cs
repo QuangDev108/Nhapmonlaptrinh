@@ -11,6 +11,8 @@ public abstract class DamageReceiver : QuangMonoBehaviour
     [SerializeField] protected int hpMax = 2;
     [SerializeField] protected bool isDead = false;
 
+    public int HP => hp;
+    public int HPMax => hpMax;
     protected override void OnEnable()
     {
         this.Reborn();
@@ -73,7 +75,6 @@ public abstract class DamageReceiver : QuangMonoBehaviour
     }
 
     protected abstract void OnDead();
-    
 
 }
 

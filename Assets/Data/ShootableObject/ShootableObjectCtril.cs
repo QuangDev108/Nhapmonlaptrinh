@@ -25,6 +25,9 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
     
     [SerializeField] protected Spawner spawner;
     public Spawner Spawner => spawner;
+
+    [SerializeField] protected DamageReceiver damageReceiver;
+    public DamageReceiver DamageReceiver => damageReceiver;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -35,8 +38,15 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
         this.LoadObjMovement();
         this.LoadObjLookAtTarget();
         this.LoadSpawner();
+        this.LoadDameReceiver();
     }
 
+    protected virtual void LoadDameReceiver()
+    {
+        if (this.damageReceiver != null) return;
+        this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
+        Debug.Log(transform.name + ": LoadDameReceiver", gameObject);
+    }    
     protected virtual void LoadSpawner()
     {
         if (this.spawner != null) return;

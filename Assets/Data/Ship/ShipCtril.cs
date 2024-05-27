@@ -7,6 +7,8 @@ public class ShipCtril : AbilityObjectCtril
     [Header("Ship")]
     [SerializeField] protected Inventory inventory;
     public Inventory Inventory => inventory;
+    
+    
 
     protected override string GetObjectTypeString()
     {
@@ -17,6 +19,7 @@ public class ShipCtril : AbilityObjectCtril
     {
         base.LoadComponents();
         this.LoadInventory();
+       
     }
 
     protected virtual void LoadInventory()
