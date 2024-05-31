@@ -45,7 +45,7 @@ public abstract class ShootableObjectCtril : QuangMonoBehaviour
     {
         if (this.damageReceiver != null) return;
         this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
-        Debug.Log(transform.name + ": LoadDameReceiver", gameObject);
+      //  Debug.Log(transform.name + ": LoadDameReceiver", gameObject);
     }    
     protected virtual void LoadSpawner()
     {

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BtnExitGame : BaseButton
+public class BtnOpenInventory : BaseButton
 {
     protected override void OnClick()
     {
-       Application.Quit();
+        UIInventory.Instance.Toggle();
     }
 }
