@@ -6,14 +6,6 @@ public class ItemUpgrade : InventoryAbstract
     [Header("Item Upgrade")]
     [SerializeField] protected int maxLevel = 9;
 
-    protected override void Start()
-    {
-        base.Start();
-        Invoke(nameof(this.Test), 1);
-        Invoke(nameof(this.Test), 2);
-        Invoke(nameof(this.Test), 3);
-    }
-
     protected virtual void Test()
     {
         this.UpgradeItem(0);
