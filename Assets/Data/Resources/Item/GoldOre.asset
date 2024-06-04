@@ -16,3 +16,5 @@ MonoBehaviour:
   itemType: 1
   itemName: Gold ore
   defaultMaxStack: 7
+  sprite: {fileID: 21300000, guid: f8b0c5d72706dac46b25ee0020d7d8a0, type: 3}
+  upgradeLevels: []

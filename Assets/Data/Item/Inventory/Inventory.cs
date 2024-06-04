@@ -129,6 +129,7 @@ public class Inventory : QuangMonoBehaviour
     {
         ItemInventory itemInventory = new ItemInventory
         {
+            itemID = ItemInventory.RandomID(),
             itemProfile = itemProfile,
             maxStack = itemProfile.defaultMaxStack
         };
