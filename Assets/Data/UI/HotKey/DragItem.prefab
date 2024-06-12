@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7a7d66fe5ca714fbea134b29507e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 6048012457681831759}
   realParent: {fileID: 0}
 --- !u!222 &6048012457681831756
 CanvasRenderer:

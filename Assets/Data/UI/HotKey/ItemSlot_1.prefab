@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5993089490922108021}
   - component: {fileID: 5993089490922108020}
   - component: {fileID: 5993089490922108022}
+  - component: {fileID: 7197465249951488130}
   m_Layer: 5
   m_Name: ItemSlot_1
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.504895, b: 0.504895, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -100,3 +101,15 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &7197465249951488130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993089490922108018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5da057518c1cb4d897809c9b36ae92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
