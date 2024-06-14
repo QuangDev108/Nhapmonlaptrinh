@@ -74,7 +74,7 @@ public class UIInventory : UIInventoryAbstract
     {
         if(this.inventorySort == InventorySort.NoSort) return;
 
-        Debug.Log("== InventorySort.ByName  ==");
+        //Debug.Log("== InventorySort.ByName  ==");
         int itemCount = this.inventoryCtril.Content.childCount;
         Transform currenItem, nextItem;
         UIItemInventory curentUIItem, nextUIItem;
